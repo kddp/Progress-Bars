@@ -12,10 +12,10 @@
   	background-color: #ddd;
     border-radius: 5px;
     border: 1px solid grey;
+    margin: 15px 0px;
 }
 
 .myBar {
-  	width: 25%;
   	height: 30px;
   	background-color: #4CAF50;
   	transition-property: width;

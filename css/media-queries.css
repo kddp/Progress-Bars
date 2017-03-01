@@ -1,0 +1,221 @@
+/* Responsive for ipad */
+@media only screen and (min-width : 768px) and (max-width : 1024px)  { 
+	
+	.active-container{
+		margin-left: 5%;
+	}
+
+	.main-content{
+    	width: 88%!important;
+	}
+
+	.active-text{
+    	position: initial;
+	    width: 90%;
+	    position: relative;
+	    bottom: 20px;
+	    /* right: 32px; */
+	    left: 1px;
+
+	}
+
+	.active-container{
+		width: 45%;
+	}
+
+	.article-content {
+	   	    padding: 15px;
+    height: 115px;
+    width: 100%;
+    margin: 0 5px;
+	}
+
+	.sub-content > div:nth-child(2){
+		border-right: none;
+		border-bottom: 1px dotted grey;
+	}
+
+	.sub-content > div:nth-child(3){
+		border-right: none;
+		border-bottom: 1px dotted grey;
+	}
+
+	.sub-content > div:nth-child(1){
+		border-right: none;
+		border-bottom: 1px dotted grey;
+	}
+
+
+	.article-content > div:nth-child(2) {
+	        height: 85px;
+    position: initial;
+    width: 35%;
+    float: right;
+    margin-right: 4%;
+
+	}
+
+	.sub-content{
+		height: 345px;
+	    background-color: white;
+	    position: relative;
+	    bottom: 53px;
+	    width: 50%;
+	    float: right;
+	}
+
+	.article-content > div{
+		width: 58%;
+    	float: left;
+    	padding: 12px;
+	}
+
+	.modal-content {
+	    width: 88%!important;
+	}
+
+}
+
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 0px;
+    overflow: auto;
+}
+
+.close-btn {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: 800;
+    position: relative;
+    bottom: 10px;
+}
+
+.close-btn:hover,.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header{
+	font-size: 13pt;
+    font-weight: 800;
+    padding: 20px;
+    background-color: rgba(47, 140, 214, 0.73);
+    color: #fff;
+    border: 0;
+}
+
+.modal-content > div > p{
+	padding: 20px;
+    font-size: 13pt;
+}
+
+.modal-content footer{
+	font-size: 11pt;
+    padding: 43px;
+    width: 100%;
+}
+
+.modal-content footer > span {
+	display: inline-block;
+    float: right;
+    font-weight: 600;
+}
+
+.modal-header > div {
+    width: 70%;
+}
+
+
+/* Responsive for Mobile devices */
+@media only screen and (min-width : 300px) and (max-width : 765px)  { 
+
+	.modal-content {
+	    width: 85%!important;
+	}
+
+	.active-container {
+        width: 100%;
+	    bottom: 0;
+	    min-height: 386px;
+	    margin-left: 0%;
+	    height: 190px;
+	    min-height: 200px;
+	}
+
+	.active-text {
+	    bottom: 140px;
+	    font-size: 13pt;
+	    width: 80%;
+	    float: right;
+	    left: 0px;
+	    height: 85px;
+	}
+
+	.active-img{
+		height: 300px;
+	}
+
+	.header{
+		display: none;
+	}
+
+	.sub-content > div:nth-child(1), .sub-content > div:nth-child(2){
+	    border-bottom: 2px dotted grey;
+	    border-right: none;
+	}
+
+	.article-content {
+	    padding: 12px;
+	    width: 92%;
+	    margin: 0px 19px;
+	    height: 145px;
+	    position: relative;
+	}
+
+	.article-content > div:nth-child(2){
+		top: 50%;
+		transform: translateY(-50%);
+		position: relative;
+	}
+
+	.article-content > div{
+	    width: 65%;
+	    float: left;
+	    margin-left: 0;
+	    font-size: 12pt;
+	    padding: 11px 11px 11px 0px;
+	    text-align: start;
+	    position: relative;
+	    top: 50%;
+	    transform: translateY(-50%);
+
+	}
+
+	.active-img {
+	    height: 100%;
+	}
+
+	.article-content > div:nth-child(2){
+		background-color: rgba(158, 158, 158, 0.48);
+	    width: 35%;
+	    height: 85px;
+	    float: left;
+	}
+}

@@ -7,55 +7,49 @@
 		
 		<!-- styles -->
 		<link rel="stylesheet" type="text/css" href="css/master.css">
-		<link rel="stylesheet" type="text/css" href="css/media-queries.css">
 
 		<!-- scripts -->
-		<script type="text/javascript"src="js/script.js" ></script>
+		<script type="text/javascript"src="js/scripts.js" ></script>
 	</head>
 	<body>
-		<header class="header"></header>
-		<div>
-			<div class="main-content">
-				<div class="active-container">
-					<div class="active-img"></div>
-					<div class="active-text">
-						<span>Ad Blockers: Setback or Spark for Innovation?</span>
-					</div>
-				</div>
-				<div class="sub-content">
-					<div class="article-content">
-						<div>The real reson why making money with online media is hard</div>
-						<div></div>
-					</div>
-					<div class="article-content">
-						<div><span>How Motherly uses personalization to create engagement</span></div>
-						<div></div>
-					</div>
-					<div class="article-content">
-						<div><span>Fixing Email overload, and now char overload, for content term</span></div>
-						<div></div>
-					</div>
-				</div>
+		<header></header>
+		<div class="main-container">
+			<h2>Progress Bars</h2>
+			<div class="progress-box">
+				<span class="text"></span>
+			  	<div class="myBar"></div>
+			</div>
+			<br>
+			<div class="progress-box">
+				<span class="text"></span>
+			  	<div class="myBar class-50"></div>
+			</div>
+			<br>
+			<div class="progress-box">
+				<span class="text"></span>
+			  	<div class="myBar class-75"></div>
+			</div>
+			<br><br>
+			<!-- select box -->
+			<div class="select-container">
+				<select id="mySelect">
+					<option value="0">Progress1</option>
+					<option value="1">Progress2</option>
+					<option value="2">Progress3</option>
+				</select>
+			</div>
+			<!-- buttons -->
+			<div class="btn-container" id="btn-group">
 			</div>
 		</div>
-		<div id="myModal" class="modal">
-		  	<div class="modal-content">
-		  		<header class="modal-header">
-		    		<span class="close-btn">&times;</span>
-		    		<div>Ad Blockers: Setback or Spark for Innovation?</div>
-		  		</header>
-		    	<div>
-		    		<p>In 2015, the industry lost a staggering $22 billion in revenue due to ad blockers 
-		    			Publishers are lamenting their losses. But ifusers are annoyed enough at ads that they want
-		    			to block them. should'nt advertisers be doing something differnet?<br><br>
-		    			This rough turn down could be the spark the industry need to distrupt the old paradigms and create
-		    			innovative ads for new digital landscape.
-		    		</p>
-		    	</div>
-		    	<footer>
-		    		<span>Continue reading..</span>
-		    	</footer>
-		  	</div>	
+		<hr>
+		<div class="main-container">
+			<h3 class="header-text"><em>End point data :</em></h3>
+			<ul>
+				<li><b>Max bar limit is :&nbsp;</b><span id="max"></span></li>
+				<li><b>Buttons :&nbsp;</b><span id="btn"></span></li>
+			</ul>
 		</div>
+		<footer></footer>
 	</body>
 </html>

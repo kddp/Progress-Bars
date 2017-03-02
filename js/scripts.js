@@ -8,9 +8,21 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 });
 
+/* Function to update dynamically generated bars based on default values */
+function updateBars(className, call, percentage, callback){
+	document.getElementsByClassName("text")[call].textContent = percentage + '%';
+	document.getElementsByClassName("myBar")[call].style.width = percentage + '%'; 
+	if(percentage >= 100){
+		document.getElementsByClassName(className)[call].style.backgroundColor = "#e43c3c";
+	} else if(percentage <= 25) {
+		document.getElementsByClassName(className)[call].style.backgroundColor = "#FFC107";
+	}
+	return callback(parseInt(percentage));
+}
 
 
-/*Function to get the width of progress bar*/
+
+/* Function to get the width of progress bar */
 function getWidth(className, call, boolean, callback){
 	var parent = document.getElementsByClassName(className)[call].parentElement.offsetWidth;
 	var child = document.getElementsByClassName(className)[call].offsetWidth;
@@ -27,28 +39,25 @@ function getWidth(className, call, boolean, callback){
 /** 
 *
 *	Function to initilize progress bar
-* 	Setting max limit of the progress bars 
+* 	Setting max limit, bars with default values and select box 
 *
 */
 function init(){
-	var arr = document.getElementsByClassName("myBar");
-	for (var i = 0; i < arr.length; i++) {
-		getWidth("myBar", i, true, function(data){});
-	};
-
 	/**
 	* 	GET request to endpoints to set default values
 	*	dynamically adding max limit and buttons of the progress bars 
 	*/
 	httpGet("http://pb-api.herokuapp.com/bars",function(response){
 		var data = JSON.parse(response);
-		console.info(data);
-		maxLimit = data.limit;
-		bars = data.bars;
-		buttons = data.buttons;
+		maxLimit = data.limit, bars = data.bars, buttons = data.buttons;
 		document.getElementById("max").textContent = data.limit;
 		document.getElementById("btn").textContent = data.buttons;
+		document.getElementById("bars").textContent = data.bars;
 		var ele = document.getElementById("btn-group");
+		var select = document.getElementById("mySelect");
+		var bar = document.getElementById("bar-container");
+
+		// dynamically generates buttons
 		for (var i = 0; i < buttons.length; i++) {
 			var myEle = document.createElement("button");
 		    myEle.type = "button";
@@ -56,6 +65,32 @@ function init(){
 		    myEle.className = "btn-group";
 		    ele.appendChild(myEle);
 		};
+
+		// dynamically generates bars with default value
+		for (var j = 0; j < bars.length; j++) {
+			var option = document.createElement("option");
+			var eachBar = document.createElement("div");
+			var barText = document.createElement("span");
+			var barBox = document.createElement("div");
+			
+			//bars
+			eachBar.className = "progress-box";
+			barBox.className = "myBar";
+			barText.className = "text";
+			eachBar.appendChild(barText);
+			eachBar.appendChild(barBox);
+
+			bar.appendChild(eachBar);
+			
+			// select box options
+			option.textContent = "Progress#"+bars[j];
+			option.value = j;
+			select.appendChild(option);
+
+			updateBars("myBar", j, bars[j], function(data){});
+		};
+
+		//init();
 
 	});
 }
@@ -102,8 +137,7 @@ function move(steps) {
 		document.getElementsByClassName("myBar")[progressNo].style.width = totalWidth + '%'; 
 		document.getElementsByClassName("text")[progressNo].textContent = textValue + '%';
 	});
-	
-}
+};
 
 // method to make api call
 function httpGet(theUrl, callback){
@@ -111,12 +145,10 @@ function httpGet(theUrl, callback){
     xmlHttp.onreadystatechange = function() { 
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200){
             callback(xmlHttp.responseText);
-        }
-
-        if(xmlHttp.status == 404){
-        	alert("Unable to get data from end points");
+        } else if(xmlHttp.readyState == 4 && ( xmlHttp.status == 0) || (xmlHttp.status == 404)){
+        	alert("Unable to get data from end points, Check your Internet connection!!!");
         }
     }
     xmlHttp.open("GET", theUrl, true); 
     xmlHttp.send();
-}
+};

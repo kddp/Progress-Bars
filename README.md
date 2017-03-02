@@ -4,7 +4,7 @@
 
 #### End point url : [End points](http://pb-api.herokuapp.com/bars)
 
-#### Demo url : [Demo](http://static.optus.com.au/pei/progress-bars-demo.ogv)
+#### Demo video : [Demo](http://static.optus.com.au/pei/progress-bars-demo.ogv)
 
 ### Requirements
 

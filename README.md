@@ -15,7 +15,7 @@ End point url : [End points](http://pb-api.herokuapp.com/bars)
 * Implement a responsive solution: testing it on mobile, iphone, etc.
 * Animated bar changing.
 
-### Endpoint inputs:
+### Endpoint inputs example:
 ``` {
     "buttons": [
         10,

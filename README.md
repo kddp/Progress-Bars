@@ -12,7 +12,7 @@ End point url : [End points](http://pb-api.herokuapp.com/bars)
 * Can't go under 0
 * Can go over limit (defined in API), but limit the bar itself and change its colour
 * Display usage amount, centered
-* Implement a responsive solution: testing it on mobile, iphone, etc.
+* Responsive solution: testing it on mobile, iphone, etc.
 * Animated bar changing.
 
 ### Endpoint inputs example:

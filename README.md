@@ -36,4 +36,8 @@
 ### Breakdown
 * buttons : The amount of buttons to display and what value they increment or decrement the selected bar. Randomly generates between 4 and 6 buttons.
 * bars : The number of progress bars to display and their default values.
-* limit	: The equivalent to 100% of each bar. For example, the bar should be 100% filled. 
+* limit	: The equivalent to 100% of each bar.
+
+### Usage 
+* Change the url in js file pointing to your endpoint.
+
